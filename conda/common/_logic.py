@@ -250,10 +250,27 @@ class _PySatSolver(_SatSolver):
         return solution
 
 
+class _LibSolvSolver(_SatSolver):
+    """
+    A solver backed by openSUSE's ``libsolv``. This library is imported
+    as the ``solv`` Python package.
+    """
+
+    def setup(self, m, **kwargs):
+        pass
+
+    def invoke(self, solver):
+        pass
+
+    def process_solution(self, sat_solution):
+        pass
+
+
 _sat_solver_str_to_cls = {
     "pycosat": _PycoSatSolver,
     "pycryptosat": _PyCryptoSatSolver,
     "pysat": _PySatSolver,
+    "libsolv": _LibSolvSolver,
 }
 
 _sat_solver_cls_to_str = {cls: string for string, cls in _sat_solver_str_to_cls.items()}

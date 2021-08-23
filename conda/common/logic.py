@@ -46,6 +46,7 @@ FALSE = FALSE
 PycoSatSolver = "pycosat"
 PyCryptoSatSolver = "pycryptosat"
 PySatSolver = "pysat"
+LibSolvSolver = "libsolv"
 
 
 class Clauses(object):
