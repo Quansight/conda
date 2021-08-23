@@ -15,8 +15,8 @@ from .base.constants import ChannelPriority, MAX_CHANNEL_PRIORITY, SatSolverChoi
 from .base.context import context
 from .common.compat import iteritems, iterkeys, itervalues, odict, on_win, text_type
 from .common.io import time_recorder
-from .common.logic import (Clauses, PycoSatSolver, PyCryptoSatSolver, PySatSolver, TRUE,
-                           minimal_unsatisfiable_subset)
+from .common.logic import (Clauses, PycoSatSolver, PyCryptoSatSolver, PySatSolver, LibSolvSolver,
+                           TRUE, minimal_unsatisfiable_subset)
 from .common.toposort import toposort
 from .exceptions import (CondaDependencyError, InvalidSpec, ResolvePackageNotFound,
                          UnsatisfiableError)
@@ -37,6 +37,7 @@ _sat_solvers = odict([
     (SatSolverChoice.PYCOSAT, PycoSatSolver),
     (SatSolverChoice.PYCRYPTOSAT, PyCryptoSatSolver),
     (SatSolverChoice.PYSAT, PySatSolver),
+    (SatSolverChoice.LIBSOLV, LibSolvSolver),
 ])
 
 

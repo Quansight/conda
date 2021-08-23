@@ -275,6 +275,7 @@ class SatSolverChoice(Enum):
     PYCOSAT = 'pycosat'
     PYCRYPTOSAT = 'pycryptosat'
     PYSAT = 'pysat'
+    LIBSOLV = 'libsolv'
 
     def __str__(self):
         return self.value
